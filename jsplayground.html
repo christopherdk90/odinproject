@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>EIN IS THE BEST DOG</h1>
+        <div id="container">Dogs
+            <button id="1">Click me</button>
+            <button id="2">Click me</button>
+            <button id="3">Click me</button>
+        </div>
+
+        <button id="btn">Click me</button>
+    </body>
+</html>
+
+<script>
+
+    const buttons = document.querySelectorAll('button');
+
+    buttons.forEach((button) => {
+
+        button.addEventListener('click', (e) => {
+            alert(button.id);
+        });
+
+    });
+
+    var btn = document.querySelector('#btn');
+    btn.addEventListener('click', function(e){
+        e.target.style.background = 'red';
+        console.log(e);
+    });
+
+    const container = document.querySelector('#container');
+
+    const content = document.createElement('p');
+    content.classList.add('content');
+    content.textContent = "Hey I'm red!";
+    content.style.color = 'red';
+
+    container.appendChild(content);
+
+    const content1 = document.createElement('h3');
+    content1.classList.add('content1');
+    content1.textContent = "I'm a blue h3!";
+    content1.style.color = 'blue';
+
+    container.appendChild(content1);
+
+    // black border
+    // pink background
+    const content2 = document.createElement('div');
+    content2.classList.add('content2');
+    const content3 = document.createElement('h1');
+    content3.textContent = "I'm in a div";
+    content3.classList.add('content3')
+    content2.appendChild(content3);
+    const content4 = document.createElement('p');
+    content4.textContent = "ME TOO!";
+    content4.classList.add('content4')
+    content2.appendChild(content4);
+
+    content2.style.backgroundColor = 'pink';
+    content2.style.border = "solid";
+
+    container.appendChild(content2);
+
+</script>

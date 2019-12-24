@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+
+            function computerPlay(){
+                var selection = Math.floor(Math.random()*3);
+                if (selection == 0){
+                    return 'rock';
+                }
+                else if (selection == 1){
+                    return 'paper';
+                }
+                else if (selection == 2){
+                    return 'scissors';
+                }
+            }
+
+            function humanPlay(){
+                var input = prompt();
+                input.toLowerCase;
+                return input;
+            }
+
+            function playRound(playerSelection, computerSelection){
+                if (playerSelection == computerSelection){
+                    return 'It is a tie!';
+                }
+                else if (playerSelection == 'rock'){
+                    if (computerSelection == 'paper'){
+                        return 'You lose! Paper beats rock!';
+                    }
+                    else if (computerSelection == 'scissors'){
+                        return 'You win! Rock beats scissors!';
+                    }
+                }
+                else if (playerSelection == 'paper'){
+                    if (computerSelection == 'scissors'){
+                        return 'You lose! Scissors beats paper!';
+                    }
+                    else if (computerSelection == 'rock'){
+                        return 'You win! Paper beats rock!';
+                    }
+                }
+                else if (playerSelection == 'scissors'){
+                    if (computerSelection == 'rock'){
+                        return 'You lose! Rock beats scissors!';
+                    }
+                    else if (computerSelection == 'paper'){
+                        return 'You win! Scissors beats paper!';
+                    }
+                }
+        
+            }
+
+            function game(){
+
+                for (var i = 0; i < 5; i++){
+
+                    var playerSelection = humanPlay();
+                    var computerSelection = computerPlay();
+
+                    console.log("You selected " + playerSelection);
+                    console.log("The computer selected " + computerSelection);
+                    console.log(playRound(playerSelection, computerSelection));
+
+                }
+
+            }
+
+            game();
+
+            //var playerSelection = humanPlay();
+            //var computerSelection = computerPlay();
+
+            //console.log(playRound(playerSelection, computerSelection));
+
+
+        </script>
+    </body>
+
+
+</html>
